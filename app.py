@@ -102,7 +102,7 @@ user details: {query}"""
 # from IPython import display as DISPLAY
 # DISPLAY.HTML(code)
 #8
-from IPython.display import HTML, display
+#from IPython.display import HTML, display
 
 def get_jobs(
     agent,
