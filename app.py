@@ -14,6 +14,13 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+
+st.set_page_config(layout="wide")
+st.title("AI RESUME GENERATOR")
+st.write("""This app helps user to build customized Professional Resume with latest Job apply links""")
+
+st.image("bg.png")
+
 #2
 TAVILY_API_KEY = "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"
 GOOGLE_API_KEY = "AQ.Ab8RN6LwuJ7xSRvSX3IAPFEa8pFnUNsYsvYIjOFojTEbF3iAeA"
@@ -25,8 +32,8 @@ model = ChatGoogleGenerativeAI(
     google_api_key=GOOGLE_API_KEY
 )
 
-response = model.invoke("Hello Buddy!")
-response.content[-1]['text']
+#response = model.invoke("Hello Buddy!")
+#response.content[-1]['text']
 #4
 def search_latest_news_jobs(query):
     """
@@ -47,7 +54,7 @@ agent = create_agent(
     model = model,
     tools = [search_latest_news_jobs])
 
-agent
+#agent
 #6
 def main_agent(agent, query):
   """This is main agent, or leader agent orchestrate sub agents"""
@@ -92,9 +99,9 @@ user details: {query}"""
   return code
 
  #7
-code = main_agent(agent, "UDIT, GEN AI EXPERT")
-from IPython import display as DISPLAY
-DISPLAY.HTML(code)
+# code = main_agent(agent, "UDIT, GEN AI EXPERT")
+# from IPython import display as DISPLAY
+# DISPLAY.HTML(code)
 #8
 from IPython.display import HTML, display
 
@@ -135,6 +142,7 @@ Requirements:
     code = response["messages"][-1].content[-1]["text"]
     return code
 
-
+   #code = get_jobs(agent)
+   #DISPLAY.HTML(code)
 
 
