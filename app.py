@@ -20,6 +20,8 @@ st.write("""This app helps user to build customized Professional Resume with lat
 
 st.image("bg.png")
 
+st.sidebar.title("Fill Important Details")
+st.sidebar.image("bg.png")
 #2
 TAVILY_API_KEY = "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"
 GOOGLE_API_KEY = "AQ.Ab8RN6LwuJ7xSRvSX3IAPFEa8pFnUNsYsvYIjOFojTEbF3iAeA"
